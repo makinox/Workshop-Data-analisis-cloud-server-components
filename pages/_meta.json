@@ -1,4 +1,10 @@
 {
   "index": "Bienvenido",
-  "how-to-start": "Como empezar"
+  "presentation": "Presentacion",
+  "introduction": "1. Introduccion a la analitica de datos",
+  "google-intro": "2. Usemos google sheets",
+  "development": "3. Desarrollemos!",
+  "data-visualization": "4. Visualizemos los datos",
+  "deployment": "5. Desplegemos nuestra aplicacion",
+  "conclusion": "Conclusiones"
 }
