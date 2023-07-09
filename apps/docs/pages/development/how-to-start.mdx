@@ -1,7 +1,47 @@
 # Como empezar
 
-Este proyecto utilizaremos tecnologias web generales bastantes conocidas, para empezar a usar javascript asegurate de poder usar javascript.
+Este proyecto utilizaremos tecnologias web generales bastantes conocidas, para empezar asegurate de poder usar javascript.
 
 Puedes instalarlo de manera manual yendo a https://nodejs.org/en
 
 Si prefieres usarlo de manera mas controlada, dinamica o avanzada, podrias optar por instalar NVM https://github.com/nvm-sh/nvm
+
+## Planeemos las herramientas que vamos a usar
+
+Usaremos principalmente las siguientes herramientas
+
+- [Yarn:](https://yarnpkg.com) - Este sera nuestro gestor de paquetes elegido para los ejemplos, sin embargo sientete libre de usar `npm` o `pnpm` si deseas
+- [NextJS:](https://nextjs.org) Para usar react y crear la pagina web de forma moderna
+- [React:](https://react.dev) Como herramienta para gestionar y crear los componentes web
+- [CSS:](https://developer.mozilla.org/en-US/docs/Web/CSS) Para darle estilos y forma a nuestra pagina web
+- [google-spreadsheet:](https://www.npmjs.com/package/google-spreadsheet) como libreria para manejar los datos de nuestra hoja de calculo
+
+## Creando el proyecto desde cero
+
+Para este ejemplo los pasos que vamos a realizar van a ser realizados en un sistema de comandos unix, es decir que estos pasos podrian cambiar si estan en un sistema windows, por lo cual es conveniente que si estas en windows tengas habilitado un [sub-sitema linux](https://learn.microsoft.com/en-us/windows/wsl)
+
+Dicho eso podemos comenzar abriendo nuestra terminal y escribir el siguiente comando para instalar `NextJS`
+
+```bash filename="terminal"
+yarn create next-app # Recuerda que puedes usar tu gestor de paquetes preferido
+```
+
+Te saldran secuencialmente varias opciones para inicializar tu proyecto, para el ejemplo nosotros usamos las siguientes
+
+```bash filename="terminal"
+✔ What is your project named? … proyecto
+✔ Would you like to use TypeScript? … Yes
+✔ Would you like to use ESLint? … Yes
+✔ Would you like to use Tailwind CSS? … No
+✔ Would you like to use `src/` directory? … No
+✔ Would you like to use App Router? (recommended) … Yes
+✔ Would you like to customize the default import alias? … Yes
+✔ What import alias would you like configured? … @/*
+```
+
+Una vez se terminen de instalar las dependencias ingresamos a la carpeta creada en donde esta disponible nuestro proyecto, para instalar nuestra ultima dependencia `google-spreadsheet` y poder empezar a crear codigo
+
+```bash filename="terminal"
+cd proyecto
+yarn add google-spreadsheet
+```
