@@ -1,3 +1,6 @@
 {
-  "google-intro": "Usemos google sheets como base de datos"
+  "google-sheets": "Usemos google sheets como base de datos",
+  "create-google": "Creando una cuenta de google",
+  "create-spreadsheet": "Creando la hoja de calculo",
+  "manage-spreadsheet": "Administrando la hoja de calculo"
 }
