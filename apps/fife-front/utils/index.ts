@@ -41,5 +41,5 @@ export const readDocument = async () => {
     return rowData as teamData;
   });
 
-  return teamsData;
+  return { teamsData, tableHeaders };
 };
