@@ -1,14 +1,14 @@
 import { GoogleSpreadsheet } from 'google-spreadsheet';
 import { JWT } from 'google-auth-library';
 
-type teamData = {
+export interface teamData {
   equipo: string;
   partido1: number;
   partido2: number;
   partido3: number;
   partido4: number;
   partido5: number;
-};
+}
 
 export const readDocument = async () => {
   const authData = {

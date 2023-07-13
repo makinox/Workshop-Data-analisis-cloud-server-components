@@ -1,11 +1,10 @@
 import { readDocument } from '@/utils';
 
 import styles from './page.module.css';
+import { AppBar } from '@/components/AppBar';
 
 const Home = async () => {
   const { tableHeaders, teamsData } = await readDocument();
-
-  console.log({ teamsData });
 
   return (
     <main className={styles.main}>
@@ -32,6 +31,9 @@ const Home = async () => {
           </tbody>
         </table>
       </div>
+      <section style={{ width: '300px', height: '300px' }}>
+        <AppBar tableHeaders={tableHeaders} teamsData={teamsData} />
+      </section>
     </main>
   );
 };
