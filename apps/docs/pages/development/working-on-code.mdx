@@ -1,0 +1,87 @@
+# Trabajando en el codigo
+
+Al entrar por primera vez a nuestro proyecto vemos la siguiente estructura de carpetas
+
+```bash
+- app # Aca es donde estaran nuestras paginas de la app que construiremos
+- public # Aca es donde dejaremos los elementos graficos que lleguemos a necesitar
+```
+
+### Guardamos las variables de entorno
+
+```bash
+CLIENT_EMAIL="***"
+PRIVATE_KEY="***"
+SPREADSHEET_ID="***"
+```
+
+### Para continuar nuestro proyecto
+
+```tsx
+import styles from './page.module.css';
+
+const Home = async () => {
+  return (
+    <main className={styles.main}>
+      <h2>Hola mundo</h2>
+    </main>
+  );
+};
+
+export default Home;
+```
+
+### Conectando `Google Sheets` con nuestro codigo
+
+```tsx
+import { GoogleSpreadsheet } from 'google-spreadsheet';
+import { JWT } from 'google-auth-library';
+
+export const readDocument = async () => {
+  const authData = {
+    email: process.env.CLIENT_EMAIL,
+    key: process.env.PRIVATE_KEY?.replace(/\\n/g, '\n'),
+    scopes: ['https://www.googleapis.com/auth/spreadsheets'],
+  };
+
+  const authToken = new JWT(authData);
+  const sheetDocument = new GoogleSpreadsheet(process.env.SPREADSHEET_ID as string, authToken);
+};
+```
+
+### Leyendo nuestros datos de `Google Sheets`
+
+```tsx
+export const readDocument = async () => {
+  // {...}
+  await sheetDocument.loadInfo();
+
+  const sheet = sheetDocument.sheetsByIndex[defaultIndex];
+  await sheet.loadHeaderRow();
+
+  const tableHeaders = sheet.headerValues; // Equipo, partido 1, partido 2, partido 3, partido 4, partido 5
+  const sheetRows = await sheet.getRows({ limit: sheet.rowCount, offset: 0 }); // Los datos de nuestras filas
+};
+```
+
+### Organizando nuestros datos
+
+```tsx
+export const readDocument = async () => {
+  // {...}
+  const teamsData = sheetRows.map((rows) => {
+    const rowData = {
+      equipo: rows.get(tableHeaders[0]),
+      partido1: rows.get(tableHeaders[1]),
+      partido2: rows.get(tableHeaders[2]),
+      partido3: rows.get(tableHeaders[3]),
+      partido4: rows.get(tableHeaders[4]),
+      partido5: rows.get(tableHeaders[5]),
+    };
+
+    return rowData as teamData;
+  });
+
+  return teamsData;
+};
+```
