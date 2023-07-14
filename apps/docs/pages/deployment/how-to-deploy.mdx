@@ -1,1 +1,37 @@
 # Como desplegaremos nuestra app
+
+Aseguremonos de haber instalado las dependencias necesarias para hacer el despliegue de nuestra app
+
+```bash
+npm install -g firebase-tools
+```
+
+Hagan login
+
+```bash
+firebase login
+```
+
+Inicializemos el proyecto
+
+```bash
+firebase experiments:enable webframeworks
+firebase init hosting
+
+# Don't set up a default project
+# Detected an existing Next.js codebase in the current directory, should we use this? (Y/n) y
+```
+
+Reconozcamos los archivos creados
+
+```bash
+.firebaserc
+firebase.json
+```
+
+Hagamos el despliegue
+
+```bash
+firebase use --add ***
+firebase deploy
+```
