@@ -1,7 +1,14 @@
 const configuration = {
-  logo: <span>My Nextra Documentation</span>,
+  logo: <span>Jesús Bossa / GDG Barranquilla</span>,
   project: {
-    link: 'https://github.com/shuding/nextra',
+    link: 'https://github.com/makinox/fife',
+  },
+  docsRepositoryBase: 'https://github.com/makinox/fife/tree/main/apps/docs',
+
+  useNextSeoProps() {
+    return {
+      titleTemplate: '%s – Taller de Jesus Bossa en la GDG Barranquilla',
+    };
   },
 };
 
