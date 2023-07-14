@@ -67,6 +67,15 @@ export const readDocument = async () => {
 ### Organizando nuestros datos
 
 ```tsx
+export type teamData = {
+  equipo: string;
+  partido1: number;
+  partido2: number;
+  partido3: number;
+  partido4: number;
+  partido5: number;
+};
+
 export const readDocument = async () => {
   // {...}
   const teamsData = sheetRows.map((rows) => {
@@ -82,6 +91,6 @@ export const readDocument = async () => {
     return rowData as teamData;
   });
 
-  return teamsData;
+  return { teamsData, tableHeaders };
 };
 ```
