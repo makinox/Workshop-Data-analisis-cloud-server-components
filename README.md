@@ -1,43 +1,40 @@
-# Turborepo starter
+# Workshop: Developing a football season analysis website using google sheets and firebase hosting
 
-This is an official starter Turborepo.
+This is a workshop to develop some functionalities and technologies like:
 
-## Using this example
+- NextJS
+- Server components
+- Data analysis
+- Data representation
+- Google Sheets
 
-Run the following command:
+## What is inside?
 
-```sh
-npx create-turbo@latest
+In this monorepo you can find two apps
+
+📖 Workshop documentation [Link](https://fife-docs.vercel.app/)
+
+![Docs-preview](./apps/docs/public/examples/docsPreview.png)
+
+🚀 Workshop final project [Link](https://fife-fife-front.vercel.app/)
+
+![App-preview](./apps/docs/public/examples/result.png)
+
+### Preparation
+
+To install dependencies just run
+
+```
+pnpm install
 ```
 
-## What's inside?
-
-This Turborepo includes the following packages/apps:
-
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+To use the app make sure you have the correct variables, follow this example for more information: https://fife-docs.vercel.app/google-intro/spreadsheet-api
 
 ### Build
 
 To build all apps and packages, run the following command:
 
 ```
-cd my-turborepo
 pnpm build
 ```
 
@@ -46,7 +43,6 @@ pnpm build
 To develop all apps and packages, run the following command:
 
 ```
-cd my-turborepo
 pnpm dev
 ```
 
